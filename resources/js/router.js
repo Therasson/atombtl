@@ -81,10 +81,154 @@ let router = new Router({
             }
         },
 
+        // Secteur de couverture par client
+        {
+            path: "/admin/sectors",
+            name: "ListeSectors", 
+            component: () => import("./views/admin/sectors/AllSector.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/sectors/create",
+            name: "CreateSectors",
+            component: () => import("./views/admin/sectors/CreateSector.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/sectors/edit/:id",
+            name: "EditSectors",
+            component: () => import("./views/admin/sectors/EditSector.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+
+        // Responsable de zone
+        {
+            path: "/admin/supervisors",
+            name: "ListeSupervisors",
+            component: () => import("./views/admin/supervisors/AllSupervisor.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/supervisors/create",
+            name: "CreateSupervisor",
+            component: () => import("./views/admin/supervisors/CreateSupervisor.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/supervisors/edit/:id",
+            name: "EditSupervisors",
+            component: () => import("./views/admin/supervisors/EditSupervisor.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+
+        // Points de vente 
+        {
+            path: "/admin/pos",
+            name: "ListePos",
+            component: () => import("./views/admin/pos/AllPos.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/pos/create",
+            name: "CreatePos",
+            component: () => import("./views/admin/pos/CreatePos.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/pos/edit/:id",
+            name: "EditPos",
+            component: () => import("./views/admin/pos/EditPos.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+
+        // Merchandisers 
+        {
+            path: "/admin/merchandisers",
+            name: "ListeMerchandisers",
+            component: () => import("./views/admin/merchandisers/AllMerchandiser.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/merchandisers/create",
+            name: "CreateMerchandisers",
+            component: () => import("./views/admin/merchandisers/CreateMerchandiser.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/merchandisers/edit/:id",
+            name: "EditMerchandisers",
+            component: () => import("./views/admin/merchandisers/EditMerchandiser.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
 
 
+        // Products 
+        {
+            path: "/admin/products",
+            name: "ListeProducts",
+            component: () => import("./views/admin/products/AllProduct.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/products/create",
+            name: "CreateProducts",
+            component: () => import("./views/admin/products/CreateProduct.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/products/edit/:id",
+            name: "EditProductss",
+            component: () => import("./views/admin/products/EditProduct.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
 
-
+        //routing
+        //visites
 
 
 

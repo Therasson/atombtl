@@ -62,22 +62,22 @@
           class="nav-link collapsed"
           href="#"
           data-toggle="collapse"
-          data-target="#collapseTwo"
+          data-target="#collapseSecteur"
           aria-expanded="true"
-          aria-controls="collapseTwo"
+          aria-controls="collapseSecteur"
         >
-          <i class="fas fa-fw fa-cog"></i>
+        <i class="fas fa-fw fa-cog"></i>
           <span>Secteurs</span>
         </a>
         <div
-          id="collapseTwo"
+          id="collapseSecteur"
           class="collapse"
           aria-labelledby="headingTwo"
           data-parent="#accordionSidebar"
         >
           <div class="bg-white py-2 collapse-inner rounded">
-            <router-link class="collapse-item" to="/admin/areas">Liste des secteurs</router-link>
-            <router-link class="collapse-item" to="/admin/areas/create">Ajouter une secteur</router-link>
+            <router-link class="collapse-item" to="/admin/sectors">Liste des secteurs</router-link>
+            <router-link class="collapse-item" to="/admin/sectors/create">Ajouter une secteur</router-link>
           </div>
         </div>
       </li>
@@ -87,26 +87,101 @@
           class="nav-link collapsed"
           href="#"
           data-toggle="collapse"
-          data-target="#collapseTwo"
+          data-target="#collapseSupervisors"
           aria-expanded="true"
-          aria-controls="collapseTwo"
+          aria-controls="collapseSupervisors"
         >
           <i class="fas fa-fw fa-cog"></i>
           <span>Responsables</span>
         </a>
         <div
-          id="collapseTwo"
+          id="collapseSupervisors"
           class="collapse"
           aria-labelledby="headingTwo"
           data-parent="#accordionSidebar"
         >
           <div class="bg-white py-2 collapse-inner rounded">
-            <router-link class="collapse-item" to="/admin/areas">Liste des Responsables</router-link>
-            <router-link class="collapse-item" to="/admin/areas/create">Ajouter un responsable</router-link>
+            <router-link class="collapse-item" to="/admin/supervisors">Liste des Responsables</router-link>
+            <router-link class="collapse-item" to="/admin/supervisors/create">Ajouter un responsable</router-link>
           </div>
         </div>
       </li>
       
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapsePos"
+          aria-expanded="true"
+          aria-controls="collapsePos"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Points de ventes</span>
+        </a>
+        <div
+          id="collapsePos"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/admin/pos">Liste des PDV</router-link>
+            <router-link class="collapse-item" to="/admin/pos/create">Ajouter un PDV</router-link>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseMerchandiser"
+          aria-expanded="true"
+          aria-controls="collapseMerchandiser"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Merchandisers</span>
+        </a>
+        <div
+          id="collapseMerchandiser"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/admin/merchandisers">Liste des Merchandisers</router-link>
+            <router-link class="collapse-item" to="/admin/merchandisers/create">Ajouter un Merchandiser</router-link>
+          </div>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a
+          class="nav-link collapsed"
+          href="#"
+          data-toggle="collapse"
+          data-target="#collapseProduct"
+          aria-expanded="true"
+          aria-controls="collapseProduct"
+        >
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Produits</span>
+        </a>
+        <div
+          id="collapseProduct"
+          class="collapse"
+          aria-labelledby="headingTwo"
+          data-parent="#accordionSidebar"
+        >
+          <div class="bg-white py-2 collapse-inner rounded">
+            <router-link class="collapse-item" to="/admin/products">Liste des produits</router-link>
+            <router-link class="collapse-item" to="/admin/products/create">Ajouter un produit</router-link>
+          </div>
+        </div>
+      </li>
+
       <li class="nav-item">
         <a
           class="nav-link collapsed"
@@ -128,82 +203,6 @@
           <div class="bg-white py-2 collapse-inner rounded">
             <router-link class="collapse-item" to="/admin/areas">Liste des routing</router-link>
             <router-link class="collapse-item" to="/admin/areas/create">Ajouter un routing</router-link>
-          </div>
-        </div>
-      </li>
-      
-      <li class="nav-item">
-        <a
-          class="nav-link collapsed"
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseTwo"
-          aria-expanded="true"
-          aria-controls="collapseTwo"
-        >
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Points de ventes</span>
-        </a>
-        <div
-          id="collapseTwo"
-          class="collapse"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionSidebar"
-        >
-          <div class="bg-white py-2 collapse-inner rounded">
-            <router-link class="collapse-item" to="/admin/areas">Liste des PDV</router-link>
-            <router-link class="collapse-item" to="/admin/areas/create">Ajouter un PDV</router-link>
-          </div>
-        </div>
-      </li>
-
-
-      <li class="nav-item">
-        <a
-          class="nav-link collapsed"
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseTwo"
-          aria-expanded="true"
-          aria-controls="collapseTwo"
-        >
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Merchandisers</span>
-        </a>
-        <div
-          id="collapseTwo"
-          class="collapse"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionSidebar"
-        >
-          <div class="bg-white py-2 collapse-inner rounded">
-            <router-link class="collapse-item" to="/admin/areas">Liste des merc</router-link>
-            <router-link class="collapse-item" to="/admin/areas/create">Ajouter un merchan</router-link>
-          </div>
-        </div>
-      </li>
-
-      <li class="nav-item">
-        <a
-          class="nav-link collapsed"
-          href="#"
-          data-toggle="collapse"
-          data-target="#collapseTwo"
-          aria-expanded="true"
-          aria-controls="collapseTwo"
-        >
-          <i class="fas fa-fw fa-cog"></i>
-          <span>Produits</span>
-        </a>
-        <div
-          id="collapseTwo"
-          class="collapse"
-          aria-labelledby="headingTwo"
-          data-parent="#accordionSidebar"
-        >
-          <div class="bg-white py-2 collapse-inner rounded">
-            <router-link class="collapse-item" to="/admin/areas">Liste des produits</router-link>
-            <router-link class="collapse-item" to="/admin/areas/create">Ajouter un produit</router-link>
           </div>
         </div>
       </li>

@@ -2343,7 +2343,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Sidebar'
 });
@@ -2992,7 +2991,164 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__.default({
       requiresAuth: true,
       layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
     }
+  }, // Secteur de couverture par client
+  {
+    path: "/admin/sectors",
+    name: "ListeSectors",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_sectors_AllSector_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/sectors/AllSector.vue */ "./resources/js/views/admin/sectors/AllSector.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
   }, {
+    path: "/admin/sectors/create",
+    name: "CreateSectors",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_sectors_CreateSector_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/sectors/CreateSector.vue */ "./resources/js/views/admin/sectors/CreateSector.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/sectors/edit/:id",
+    name: "EditSectors",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_sectors_EditSector_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/sectors/EditSector.vue */ "./resources/js/views/admin/sectors/EditSector.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, // Responsable de zone
+  {
+    path: "/admin/supervisors",
+    name: "ListeSupervisors",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_supervisors_AllSupervisor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/supervisors/AllSupervisor.vue */ "./resources/js/views/admin/supervisors/AllSupervisor.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/supervisors/create",
+    name: "CreateSupervisor",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_supervisors_CreateSupervisor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/supervisors/CreateSupervisor.vue */ "./resources/js/views/admin/supervisors/CreateSupervisor.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/supervisors/edit/:id",
+    name: "EditSupervisors",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_supervisors_EditSupervisor_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/supervisors/EditSupervisor.vue */ "./resources/js/views/admin/supervisors/EditSupervisor.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, // Points de vente 
+  {
+    path: "/admin/pos",
+    name: "ListePos",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_pos_AllPos_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/pos/AllPos.vue */ "./resources/js/views/admin/pos/AllPos.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/pos/create",
+    name: "CreatePos",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_pos_CreatePos_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/pos/CreatePos.vue */ "./resources/js/views/admin/pos/CreatePos.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/pos/edit/:id",
+    name: "EditPos",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_pos_EditPos_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/pos/EditPos.vue */ "./resources/js/views/admin/pos/EditPos.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, // Merchandisers 
+  {
+    path: "/admin/merchandisers",
+    name: "ListeMerchandisers",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_merchandisers_AllMerchandiser_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/merchandisers/AllMerchandiser.vue */ "./resources/js/views/admin/merchandisers/AllMerchandiser.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/merchandisers/create",
+    name: "CreateMerchandisers",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_merchandisers_CreateMerchandiser_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/merchandisers/CreateMerchandiser.vue */ "./resources/js/views/admin/merchandisers/CreateMerchandiser.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/merchandisers/edit/:id",
+    name: "EditMerchandisers",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_merchandisers_EditMerchandiser_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/merchandisers/EditMerchandiser.vue */ "./resources/js/views/admin/merchandisers/EditMerchandiser.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, // Products 
+  {
+    path: "/admin/products",
+    name: "ListeProducts",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_products_AllProduct_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/products/AllProduct.vue */ "./resources/js/views/admin/products/AllProduct.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/products/create",
+    name: "CreateProducts",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_products_CreateProduct_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/products/CreateProduct.vue */ "./resources/js/views/admin/products/CreateProduct.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/products/edit/:id",
+    name: "EditProductss",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_products_EditProduct_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/products/EditProduct.vue */ "./resources/js/views/admin/products/EditProduct.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, //routing
+  //visites
+  {
     path: "/admin/components/buttons",
     name: "buttons",
     component: function component() {
@@ -77627,7 +77783,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapseSecteur",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77641,7 +77797,7 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas" }
+                    attrs: { to: "/admin/sectors" }
                   },
                   [_vm._v("Liste des secteurs")]
                 ),
@@ -77650,7 +77806,7 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas/create" }
+                    attrs: { to: "/admin/sectors/create" }
                   },
                   [_vm._v("Ajouter une secteur")]
                 )
@@ -77669,7 +77825,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapseSupervisors",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77683,7 +77839,7 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas" }
+                    attrs: { to: "/admin/supervisors" }
                   },
                   [_vm._v("Liste des Responsables")]
                 ),
@@ -77692,7 +77848,7 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas/create" }
+                    attrs: { to: "/admin/supervisors/create" }
                   },
                   [_vm._v("Ajouter un responsable")]
                 )
@@ -77711,7 +77867,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapsePos",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77723,20 +77879,17 @@ var render = function() {
               [
                 _c(
                   "router-link",
-                  {
-                    staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas" }
-                  },
-                  [_vm._v("Liste des routing")]
+                  { staticClass: "collapse-item", attrs: { to: "/admin/pos" } },
+                  [_vm._v("Liste des PDV")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas/create" }
+                    attrs: { to: "/admin/pos/create" }
                   },
-                  [_vm._v("Ajouter un routing")]
+                  [_vm._v("Ajouter un PDV")]
                 )
               ],
               1
@@ -77753,7 +77906,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapseMerchandiser",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77767,18 +77920,18 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas" }
+                    attrs: { to: "/admin/merchandisers" }
                   },
-                  [_vm._v("Liste des PDV")]
+                  [_vm._v("Liste des Merchandisers")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas/create" }
+                    attrs: { to: "/admin/merchandisers/create" }
                   },
-                  [_vm._v("Ajouter un PDV")]
+                  [_vm._v("Ajouter un Merchandiser")]
                 )
               ],
               1
@@ -77795,7 +77948,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapseProduct",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77809,18 +77962,18 @@ var render = function() {
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas" }
+                    attrs: { to: "/admin/products" }
                   },
-                  [_vm._v("Liste des merc")]
+                  [_vm._v("Liste des produits")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/areas/create" }
+                    attrs: { to: "/admin/products/create" }
                   },
-                  [_vm._v("Ajouter un merchan")]
+                  [_vm._v("Ajouter un produit")]
                 )
               ],
               1
@@ -77853,7 +78006,7 @@ var render = function() {
                     staticClass: "collapse-item",
                     attrs: { to: "/admin/areas" }
                   },
-                  [_vm._v("Liste des produits")]
+                  [_vm._v("Liste des routing")]
                 ),
                 _vm._v(" "),
                 _c(
@@ -77862,7 +78015,7 @@ var render = function() {
                     staticClass: "collapse-item",
                     attrs: { to: "/admin/areas/create" }
                   },
-                  [_vm._v("Ajouter un produit")]
+                  [_vm._v("Ajouter un routing")]
                 )
               ],
               1
@@ -77942,9 +78095,9 @@ var staticRenderFns = [
         attrs: {
           href: "#",
           "data-toggle": "collapse",
-          "data-target": "#collapseTwo",
+          "data-target": "#collapseSecteur",
           "aria-expanded": "true",
-          "aria-controls": "collapseTwo"
+          "aria-controls": "collapseSecteur"
         }
       },
       [
@@ -77965,15 +78118,84 @@ var staticRenderFns = [
         attrs: {
           href: "#",
           "data-toggle": "collapse",
-          "data-target": "#collapseTwo",
+          "data-target": "#collapseSupervisors",
           "aria-expanded": "true",
-          "aria-controls": "collapseTwo"
+          "aria-controls": "collapseSupervisors"
         }
       },
       [
         _c("i", { staticClass: "fas fa-fw fa-cog" }),
         _vm._v(" "),
         _c("span", [_vm._v("Responsables")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapsePos",
+          "aria-expanded": "true",
+          "aria-controls": "collapsePos"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Points de ventes")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseMerchandiser",
+          "aria-expanded": "true",
+          "aria-controls": "collapseMerchandiser"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Merchandisers")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseProduct",
+          "aria-expanded": "true",
+          "aria-controls": "collapseProduct"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Produits")])
       ]
     )
   },
@@ -77997,75 +78219,6 @@ var staticRenderFns = [
         _c("i", { staticClass: "fas fa-fw fa-cog" }),
         _vm._v(" "),
         _c("span", [_vm._v("Routing")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "nav-link collapsed",
-        attrs: {
-          href: "#",
-          "data-toggle": "collapse",
-          "data-target": "#collapseTwo",
-          "aria-expanded": "true",
-          "aria-controls": "collapseTwo"
-        }
-      },
-      [
-        _c("i", { staticClass: "fas fa-fw fa-cog" }),
-        _vm._v(" "),
-        _c("span", [_vm._v("Points de ventes")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "nav-link collapsed",
-        attrs: {
-          href: "#",
-          "data-toggle": "collapse",
-          "data-target": "#collapseTwo",
-          "aria-expanded": "true",
-          "aria-controls": "collapseTwo"
-        }
-      },
-      [
-        _c("i", { staticClass: "fas fa-fw fa-cog" }),
-        _vm._v(" "),
-        _c("span", [_vm._v("Merchandisers")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "a",
-      {
-        staticClass: "nav-link collapsed",
-        attrs: {
-          href: "#",
-          "data-toggle": "collapse",
-          "data-target": "#collapseTwo",
-          "aria-expanded": "true",
-          "aria-controls": "collapseTwo"
-        }
-      },
-      [
-        _c("i", { staticClass: "fas fa-fw fa-cog" }),
-        _vm._v(" "),
-        _c("span", [_vm._v("Produits")])
       ]
     )
   },
@@ -95437,7 +95590,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_home_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_register_index_vue":1,"resources_js_views_verify_index_vue":1,"resources_js_views_forgot_index_vue":1,"resources_js_views_reset_index_vue":1,"resources_js_views_admin_dashboard_vue":1,"resources_js_views_admin_areas_AllArea_vue":1,"resources_js_views_admin_areas_CreateArea_vue":1,"resources_js_views_admin_areas_EditArea_vue":1,"resources_js_views_admin_buttons_vue":1,"resources_js_views_admin_cards_vue":1,"resources_js_views_admin_colors_vue":1,"resources_js_views_admin_borders_vue":1,"resources_js_views_admin_animations_vue":1,"resources_js_views_admin_other_vue":1,"resources_js_views_admin_page-not-found_vue":1,"resources_js_views_admin_blank_vue":1,"resources_js_views_admin_charts_vue":1,"resources_js_views_admin_tables_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_home_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_register_index_vue":1,"resources_js_views_verify_index_vue":1,"resources_js_views_forgot_index_vue":1,"resources_js_views_reset_index_vue":1,"resources_js_views_admin_dashboard_vue":1,"resources_js_views_admin_areas_AllArea_vue":1,"resources_js_views_admin_areas_CreateArea_vue":1,"resources_js_views_admin_areas_EditArea_vue":1,"resources_js_views_admin_sectors_AllSector_vue":1,"resources_js_views_admin_sectors_CreateSector_vue":1,"resources_js_views_admin_sectors_EditSector_vue":1,"resources_js_views_admin_supervisors_AllSupervisor_vue":1,"resources_js_views_admin_supervisors_CreateSupervisor_vue":1,"resources_js_views_admin_supervisors_EditSupervisor_vue":1,"resources_js_views_admin_pos_AllPos_vue":1,"resources_js_views_admin_pos_CreatePos_vue":1,"resources_js_views_admin_pos_EditPos_vue":1,"resources_js_views_admin_merchandisers_AllMerchandiser_vue":1,"resources_js_views_admin_merchandisers_CreateMerchandiser_vue":1,"resources_js_views_admin_merchandisers_EditMerchandiser_vue":1,"resources_js_views_admin_products_AllProduct_vue":1,"resources_js_views_admin_products_CreateProduct_vue":1,"resources_js_views_admin_products_EditProduct_vue":1,"resources_js_views_admin_buttons_vue":1,"resources_js_views_admin_cards_vue":1,"resources_js_views_admin_colors_vue":1,"resources_js_views_admin_borders_vue":1,"resources_js_views_admin_animations_vue":1,"resources_js_views_admin_other_vue":1,"resources_js_views_admin_page-not-found_vue":1,"resources_js_views_admin_blank_vue":1,"resources_js_views_admin_charts_vue":1,"resources_js_views_admin_tables_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
