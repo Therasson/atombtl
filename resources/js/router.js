@@ -52,6 +52,46 @@ let router = new Router({
                 layout: AdminLayout
             }
         },
+        // Zones de couverture
+        {
+            path: "/admin/areas",
+            name: "ListeAreas",
+            component: () => import("./views/admin/areas/AllArea.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/areas/create",
+            name: "CreateAreas",
+            component: () => import("./views/admin/areas/CreateArea.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+        {
+            path: "/admin/areas/edit/:id",
+            name: "EditAreas",
+            component: () => import("./views/admin/areas/EditArea.vue"),
+            meta: {
+                requiresAuth: true,
+                layout: AdminLayout
+            }
+        },
+
+
+
+
+
+
+
+
+
+
+
+
         {
             path: "/admin/components/buttons",
             name: "buttons",

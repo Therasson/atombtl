@@ -2133,6 +2133,217 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: 'Sidebar'
 });
@@ -2745,6 +2956,37 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__.default({
     name: "admin",
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_admin_dashboard_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/dashboard.vue */ "./resources/js/views/admin/dashboard.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, // Zones de couverture
+  {
+    path: "/admin/areas",
+    name: "ListeAreas",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_areas_AllArea_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/areas/AllArea.vue */ "./resources/js/views/admin/areas/AllArea.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/areas/create",
+    name: "CreateAreas",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_areas_CreateArea_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/areas/CreateArea.vue */ "./resources/js/views/admin/areas/CreateArea.vue"));
+    },
+    meta: {
+      requiresAuth: true,
+      layout: _views_admin_layout_index__WEBPACK_IMPORTED_MODULE_1__.default
+    }
+  }, {
+    path: "/admin/areas/edit/:id",
+    name: "EditAreas",
+    component: function component() {
+      return __webpack_require__.e(/*! import() */ "resources_js_views_admin_areas_EditArea_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/areas/EditArea.vue */ "./resources/js/views/admin/areas/EditArea.vue"));
     },
     meta: {
       requiresAuth: true,
@@ -77343,7 +77585,7 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseTwo",
+              id: "collapseArea",
               "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
@@ -77353,26 +77595,22 @@ var render = function() {
               "div",
               { staticClass: "bg-white py-2 collapse-inner rounded" },
               [
-                _c("h6", { staticClass: "collapse-header" }, [
-                  _vm._v("Custom Components:")
-                ]),
-                _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/components/buttons" }
+                    attrs: { to: "/admin/areas" }
                   },
-                  [_vm._v("Buttons")]
+                  [_vm._v("Liste des zones")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/components/cards" }
+                    attrs: { to: "/admin/areas/create" }
                   },
-                  [_vm._v("Cards")]
+                  [_vm._v("Ajouter une zone")]
                 )
               ],
               1
@@ -77389,8 +77627,8 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapseUtilities",
-              "aria-labelledby": "headingUtilities",
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
           },
@@ -77399,44 +77637,22 @@ var render = function() {
               "div",
               { staticClass: "bg-white py-2 collapse-inner rounded" },
               [
-                _c("h6", { staticClass: "collapse-header" }, [
-                  _vm._v("Custom Utilities:")
-                ]),
-                _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/utilities/colors" }
+                    attrs: { to: "/admin/areas" }
                   },
-                  [_vm._v("Colors")]
+                  [_vm._v("Liste des secteurs")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/utilities/borders" }
+                    attrs: { to: "/admin/areas/create" }
                   },
-                  [_vm._v("Borders")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "collapse-item",
-                    attrs: { to: "/admin/utilities/animations" }
-                  },
-                  [_vm._v("Animations")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "router-link",
-                  {
-                    staticClass: "collapse-item",
-                    attrs: { to: "/admin/utilities/other" }
-                  },
-                  [_vm._v("Other")]
+                  [_vm._v("Ajouter une secteur")]
                 )
               ],
               1
@@ -77444,10 +77660,6 @@ var render = function() {
           ]
         )
       ]),
-      _vm._v(" "),
-      _c("hr", { staticClass: "sidebar-divider" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "sidebar-heading" }, [_vm._v("Addons")]),
       _vm._v(" "),
       _c("li", { staticClass: "nav-item" }, [
         _vm._m(2),
@@ -77457,8 +77669,8 @@ var render = function() {
           {
             staticClass: "collapse",
             attrs: {
-              id: "collapsePages",
-              "aria-labelledby": "headingPages",
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
               "data-parent": "#accordionSidebar"
             }
           },
@@ -77467,26 +77679,22 @@ var render = function() {
               "div",
               { staticClass: "bg-white py-2 collapse-inner rounded" },
               [
-                _c("h6", { staticClass: "collapse-header" }, [
-                  _vm._v("Other Pages:")
-                ]),
-                _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/pages/page-not-found" }
+                    attrs: { to: "/admin/areas" }
                   },
-                  [_vm._v("404 Page")]
+                  [_vm._v("Liste des Responsables")]
                 ),
                 _vm._v(" "),
                 _c(
                   "router-link",
                   {
                     staticClass: "collapse-item",
-                    attrs: { to: "/admin/pages/blank" }
+                    attrs: { to: "/admin/areas/create" }
                   },
-                  [_vm._v("Blank Page")]
+                  [_vm._v("Ajouter un responsable")]
                 )
               ],
               1
@@ -77495,48 +77703,234 @@ var render = function() {
         )
       ]),
       _vm._v(" "),
-      _c(
-        "li",
-        { staticClass: "nav-item" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "nav-link", attrs: { to: "/admin/charts" } },
-            [
-              _c("i", { staticClass: "fas fa-fw fa-chart-area" }),
-              _vm._v(" "),
-              _c("span", [_vm._v("Charts")])
-            ]
-          )
-        ],
-        1
-      ),
+      _c("li", { staticClass: "nav-item" }, [
+        _vm._m(3),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse",
+            attrs: {
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
+              "data-parent": "#accordionSidebar"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-2 collapse-inner rounded" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas" }
+                  },
+                  [_vm._v("Liste des routing")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas/create" }
+                  },
+                  [_vm._v("Ajouter un routing")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _c(
-        "li",
-        { staticClass: "nav-item" },
-        [
-          _c(
-            "router-link",
-            { staticClass: "nav-link", attrs: { to: "/admin/tables" } },
-            [
-              _c("i", { staticClass: "fas fa-fw fa-table" }),
-              _vm._v(" "),
-              _c("span", [_vm._v("Tables")])
-            ]
-          )
-        ],
-        1
-      ),
+      _c("li", { staticClass: "nav-item" }, [
+        _vm._m(4),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse",
+            attrs: {
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
+              "data-parent": "#accordionSidebar"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-2 collapse-inner rounded" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas" }
+                  },
+                  [_vm._v("Liste des PDV")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas/create" }
+                  },
+                  [_vm._v("Ajouter un PDV")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _c("hr", { staticClass: "sidebar-divider d-none d-md-block" }),
+      _c("li", { staticClass: "nav-item" }, [
+        _vm._m(5),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse",
+            attrs: {
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
+              "data-parent": "#accordionSidebar"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-2 collapse-inner rounded" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas" }
+                  },
+                  [_vm._v("Liste des merc")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas/create" }
+                  },
+                  [_vm._v("Ajouter un merchan")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ]),
       _vm._v(" "),
-      _vm._m(3)
+      _c("li", { staticClass: "nav-item" }, [
+        _vm._m(6),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse",
+            attrs: {
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
+              "data-parent": "#accordionSidebar"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-2 collapse-inner rounded" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas" }
+                  },
+                  [_vm._v("Liste des produits")]
+                ),
+                _vm._v(" "),
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas/create" }
+                  },
+                  [_vm._v("Ajouter un produit")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _c("li", { staticClass: "nav-item" }, [
+        _vm._m(7),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "collapse",
+            attrs: {
+              id: "collapseTwo",
+              "aria-labelledby": "headingTwo",
+              "data-parent": "#accordionSidebar"
+            }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "bg-white py-2 collapse-inner rounded" },
+              [
+                _c(
+                  "router-link",
+                  {
+                    staticClass: "collapse-item",
+                    attrs: { to: "/admin/areas" }
+                  },
+                  [_vm._v("Liste des produits")]
+                )
+              ],
+              1
+            )
+          ]
+        )
+      ])
     ],
     1
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseArea",
+          "aria-expanded": "true",
+          "aria-controls": "collapseArea"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Zones")])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -77556,7 +77950,7 @@ var staticRenderFns = [
       [
         _c("i", { staticClass: "fas fa-fw fa-cog" }),
         _vm._v(" "),
-        _c("span", [_vm._v("Components")])
+        _c("span", [_vm._v("Secteurs")])
       ]
     )
   },
@@ -77571,15 +77965,15 @@ var staticRenderFns = [
         attrs: {
           href: "#",
           "data-toggle": "collapse",
-          "data-target": "#collapseUtilities",
+          "data-target": "#collapseTwo",
           "aria-expanded": "true",
-          "aria-controls": "collapseUtilities"
+          "aria-controls": "collapseTwo"
         }
       },
       [
-        _c("i", { staticClass: "fas fa-fw fa-wrench" }),
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
         _vm._v(" "),
-        _c("span", [_vm._v("Utilities")])
+        _c("span", [_vm._v("Responsables")])
       ]
     )
   },
@@ -77594,15 +77988,15 @@ var staticRenderFns = [
         attrs: {
           href: "#",
           "data-toggle": "collapse",
-          "data-target": "#collapsePages",
+          "data-target": "#collapseTwo",
           "aria-expanded": "true",
-          "aria-controls": "collapsePages"
+          "aria-controls": "collapseTwo"
         }
       },
       [
-        _c("i", { staticClass: "fas fa-fw fa-folder" }),
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
         _vm._v(" "),
-        _c("span", [_vm._v("Pages")])
+        _c("span", [_vm._v("Routing")])
       ]
     )
   },
@@ -77610,12 +78004,93 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center d-none d-md-inline" }, [
-      _c("button", {
-        staticClass: "rounded-circle border-0",
-        attrs: { id: "sidebarToggle" }
-      })
-    ])
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseTwo",
+          "aria-expanded": "true",
+          "aria-controls": "collapseTwo"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Points de ventes")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseTwo",
+          "aria-expanded": "true",
+          "aria-controls": "collapseTwo"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Merchandisers")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseTwo",
+          "aria-expanded": "true",
+          "aria-controls": "collapseTwo"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Produits")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "nav-link collapsed",
+        attrs: {
+          href: "#",
+          "data-toggle": "collapse",
+          "data-target": "#collapseTwo",
+          "aria-expanded": "true",
+          "aria-controls": "collapseTwo"
+        }
+      },
+      [
+        _c("i", { staticClass: "fas fa-fw fa-cog" }),
+        _vm._v(" "),
+        _c("span", [_vm._v("Visites")])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -94962,7 +95437,7 @@ var index = {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_views_home_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_register_index_vue":1,"resources_js_views_verify_index_vue":1,"resources_js_views_forgot_index_vue":1,"resources_js_views_reset_index_vue":1,"resources_js_views_admin_dashboard_vue":1,"resources_js_views_admin_buttons_vue":1,"resources_js_views_admin_cards_vue":1,"resources_js_views_admin_colors_vue":1,"resources_js_views_admin_borders_vue":1,"resources_js_views_admin_animations_vue":1,"resources_js_views_admin_other_vue":1,"resources_js_views_admin_page-not-found_vue":1,"resources_js_views_admin_blank_vue":1,"resources_js_views_admin_charts_vue":1,"resources_js_views_admin_tables_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_views_home_index_vue":1,"resources_js_views_login_index_vue":1,"resources_js_views_register_index_vue":1,"resources_js_views_verify_index_vue":1,"resources_js_views_forgot_index_vue":1,"resources_js_views_reset_index_vue":1,"resources_js_views_admin_dashboard_vue":1,"resources_js_views_admin_areas_AllArea_vue":1,"resources_js_views_admin_areas_CreateArea_vue":1,"resources_js_views_admin_areas_EditArea_vue":1,"resources_js_views_admin_buttons_vue":1,"resources_js_views_admin_cards_vue":1,"resources_js_views_admin_colors_vue":1,"resources_js_views_admin_borders_vue":1,"resources_js_views_admin_animations_vue":1,"resources_js_views_admin_other_vue":1,"resources_js_views_admin_page-not-found_vue":1,"resources_js_views_admin_blank_vue":1,"resources_js_views_admin_charts_vue":1,"resources_js_views_admin_tables_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
