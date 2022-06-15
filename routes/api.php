@@ -4,6 +4,10 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api;
 
+use App\Http\Controllers\Api\CoreController;
+use App\Http\Controllers\Api\V1\ProductController;
+use App\Http\Controllers\Api\V1\AreaController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -24,4 +28,21 @@ Route::get('email/verify/{id}', [Api\VerifyController::class, 'verify'])->name('
     
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('user', [Api\AuthController::class, 'user']);
+   
 });
+
+
+/*Route::prefix('admin')->group(function () {
+    
+    
+
+});*/
+
+
+Route::get('/get_users', [CoreController::class, 'getSupervisor']);
+
+Route::resource('areas', AreaController::class);
+Route::resource('sectors', SectorController::class);
+
+
+Route::resource('products', ProductController::class);

@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Area;
 
 class AreaController extends Controller
 {
@@ -35,7 +36,38 @@ class AreaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //validate fields
+        $attrs = $request->validate([
+            'zone' => 'required|string',
+            'user' => 'required',
+        ]);
+
+        //Area registration
+        /* if (auth()->user()->id)
+        {
+            return response([
+                'message' => 'Permission denied to create Area.'
+            ]);
+        }
+        else
+        {
+            $area = Area::create([
+                'name' =>$attrs['name'],
+                'user_id' => auth()->user()->id,
+                'etat' => 1
+            ]);
+        }*/
+        $area = Area::create([
+            'name' =>$attrs['zone'],
+            'user_id' => $request->user,
+            'description' => $request->description,
+            'etat' => 1
+        ]);
+
+        return response([
+            'area' => $area,
+        ], 200);
+
     }
 
     /**

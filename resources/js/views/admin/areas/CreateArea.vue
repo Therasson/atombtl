@@ -18,25 +18,21 @@
             </h6>
           </div>
           <div class="card-body">
-            <form>
+            <form @submit.prevent.stop="storeArea">
                 <div class="form-group">
                     <label>Nom du responsable de zone</label>
-                    <!-- <select class="form-control" v-model='country' @change='getSupervisor()'>
-                      <option value='0' >Selectionnez le chez de zone</option>
-                      <option v-for='supervisors in supervisor' :value='data.id'>{{ data.name }}</option>
-                    </select> -->
-                   <select class='form-control' v-model='user' @change='getSupervisor()'>
-                                <option value='0' >Select Country</option>
-                                <option v-for='data in countries' :value='data.id'>{{ data.name }}</option>
-                            </select>
+                    <select class='form-control' v-model='forms.user'>
+                      <option value='0' >Select user</option>
+                      <option v-for='data in users' :value='data.id'>{{ data.first_name + " " + data.last_name}}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Nom de la zone</label>
-                    <input type="text" class="form-control" >
+                    <input type="text" class="form-control"  v-model='forms.zone'>
                 </div>
                 <div class="form-group">
                     <label>Description</label>
-                    <textarea class="form-control"></textarea>
+                    <textarea class="form-control"  v-model='forms.description'></textarea>
                 </div>
                 <button type="submit" class="btn btn-primary">Create</button>
             </form>
@@ -53,25 +49,34 @@
 <script>
 export default {
     data(){
-            return {
-              user: 0,
-                users: [],
-                country: 0,
-                countries: [],
-                state: 0,
-                states: []
+        return {
+            //user: 0,
+            users: [],
+            forms: {
+              user:0,
+              zone:'',
+              description:''
             }
-        },
-        methods:{
-            getSupervisor: function(){
-                axios.get('/get_countries')
-                    .then(function (response) {
-                        this.countries = response.data;
-                    }.bind(this));
-            },
-        },
-        created: function(){
-            this.getSupervisor()
         }
+    },
+    methods:{
+        getSupervisor: function(){
+            axios.get('/get_users')
+                .then(function (response) {
+                    this.users = response.data;
+                    console.log(response.data);
+                }.bind(this));
+        },
+        storeArea: function(){
+             axios.post('/areas', this.forms)
+                .then(function (response) {
+                  window.location.href= "/admin/areas";
+                  console.log(response.data);
+                });
+        }
+    },
+    created: function(){
+        this.getSupervisor()
+    }
 }
 </script>

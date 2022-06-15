@@ -30,17 +30,17 @@
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
+
+                             <tr v-for="area in areas" :key="product.id">
+                                <td>{{ product.name }}</td>
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
-                                <td>61</td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
+                                        <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button>
+                                    </div>
+                                </td>
                             </tr>
                             
                         </tbody>

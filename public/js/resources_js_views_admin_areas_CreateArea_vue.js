@@ -59,26 +59,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      user: 0,
+      //user: 0,
       users: [],
-      country: 0,
-      countries: [],
-      state: 0,
-      states: []
+      forms: {
+        user: 0,
+        zone: '',
+        description: ''
+      }
     };
   },
   methods: {
     getSupervisor: function getSupervisor() {
-      axios.get('/get_countries').then(function (response) {
-        this.countries = response.data;
+      axios.get('/get_users').then(function (response) {
+        this.users = response.data;
+        console.log(response.data);
       }.bind(this));
+    },
+    storeArea: function storeArea() {
+      axios.post('/areas', this.forms).then(function (response) {
+        window.location.href = "/admin/areas";
+        console.log(response.data);
+      });
     }
   },
   created: function created() {
@@ -193,25 +197,35 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("form", [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Nom du responsable de zone")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.user,
-                        expression: "user"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    on: {
-                      change: [
-                        function($event) {
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    $event.stopPropagation()
+                    return _vm.storeArea.apply(null, arguments)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Nom du responsable de zone")]),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.forms.user,
+                          expression: "forms.user"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      on: {
+                        change: function($event) {
                           var $$selectedVal = Array.prototype.filter
                             .call($event.target.options, function(o) {
                               return o.selected
@@ -220,41 +234,89 @@ var render = function() {
                               var val = "_value" in o ? o._value : o.value
                               return val
                             })
-                          _vm.user = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        },
-                        function($event) {
-                          return _vm.getSupervisor()
+                          _vm.$set(
+                            _vm.forms,
+                            "user",
+                            $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          )
                         }
-                      ]
+                      }
+                    },
+                    [
+                      _c("option", { attrs: { value: "0" } }, [
+                        _vm._v("Select user")
+                      ]),
+                      _vm._v(" "),
+                      _vm._l(_vm.users, function(data) {
+                        return _c("option", { domProps: { value: data.id } }, [
+                          _vm._v(_vm._s(data.first_name + " " + data.last_name))
+                        ])
+                      })
+                    ],
+                    2
+                  )
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Nom de la zone")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.forms.zone,
+                        expression: "forms.zone"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.forms.zone },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.forms, "zone", $event.target.value)
+                      }
                     }
-                  },
-                  [
-                    _c("option", { attrs: { value: "0" } }, [
-                      _vm._v("Select Country")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.countries, function(data) {
-                      return _c("option", { domProps: { value: data.id } }, [
-                        _vm._v(_vm._s(data.name))
-                      ])
-                    })
-                  ],
-                  2
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Description")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.forms.description,
+                        expression: "forms.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    domProps: { value: _vm.forms.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.forms, "description", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                  [_vm._v("Create")]
                 )
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Create")]
-              )
-            ])
+              ]
+            )
           ])
         ])
       ])
@@ -270,26 +332,6 @@ var staticRenderFns = [
       _c("h6", { staticClass: "m-0 font-weight-bold text-primary" }, [
         _vm._v("\n            Ajouter une nouvelle zone\n          ")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Nom de la zone")]),
-      _vm._v(" "),
-      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Description")]),
-      _vm._v(" "),
-      _c("textarea", { staticClass: "form-control" })
     ])
   }
 ]

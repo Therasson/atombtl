@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Api\CoreController;
+use App\Http\Controllers\Api\V1\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,3 @@ use App\Http\Controllers\Api\CoreController;
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '.*');
-
-
-Route::get('get_countries', [CoreController::class, 'getSupervisor']);

@@ -21,14 +21,10 @@
             <form>
                 <div class="form-group">
                     <label>Nom du responsable de zone</label>
-                    <!-- <select class="form-control" v-model='country' @change='getSupervisor()'>
-                      <option value='0' >Selectionnez le chez de zone</option>
-                      <option v-for='supervisors in supervisor' :value='data.id'>{{ data.name }}</option>
-                    </select> -->
-                   <select class='form-control' v-model='user' @change='getSupervisor()'>
-                                <option value='0' >Select Country</option>
-                                <option v-for='data in countries' :value='data.id'>{{ data.name }}</option>
-                            </select>
+                    <select class='form-control' v-model='user'>
+                      <option value='0' >Select user</option>
+                      <option v-for='data in users' :value='data.id'>{{ data.name }}</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label>Nom de la zone</label>
@@ -54,19 +50,15 @@
 export default {
     data(){
             return {
-              user: 0,
+                user: 0,
                 users: [],
-                country: 0,
-                countries: [],
-                state: 0,
-                states: []
             }
         },
         methods:{
             getSupervisor: function(){
-                axios.get('/get_countries')
+                axios.get('/get_users')
                     .then(function (response) {
-                        this.countries = response.data;
+                        this.users = response.data;
                     }.bind(this));
             },
         },

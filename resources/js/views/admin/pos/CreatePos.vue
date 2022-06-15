@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1 class="h3 mb-1 text-gray-800">Créer une zone</h1>
+    <h1 class="h3 mb-1 text-gray-800">Créer un point de vente</h1>
     <p class="mb-4">
       Bootstrap's default utility classes can be found on the official page.
       The custom utilities below were created to extend this theme past the
@@ -14,31 +14,36 @@
         <div class="card mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">
-              Ajouter une nouvelle zone
+              Ajouter un point de vente
             </h6>
           </div>
           <div class="card-body">
             <form>
                 <div class="form-group">
-                    <label>Nom du responsable de zone</label>
-                    <!-- <select class="form-control" v-model='country' @change='getSupervisor()'>
-                      <option value='0' >Selectionnez le chez de zone</option>
-                      <option v-for='supervisors in supervisor' :value='data.id'>{{ data.name }}</option>
-                    </select> -->
-                   <select class='form-control' v-model='user' @change='getSupervisor()'>
-                                <option value='0' >Select Country</option>
-                                <option v-for='data in countries' :value='data.id'>{{ data.name }}</option>
-                            </select>
+                    <label>Sélectionnez le secteur</label>
+                   <select class='form-control' v-model='sector' @change='getSupervisor()'>
+                      <option value='0' >Select Country</option>
+                      <option v-for='data in sectors' :value='data.id'>{{ data.name }}</option>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>Nom de la zone</label>
+                    <label>Nom du Gérant</label>
                     <input type="text" class="form-control" >
                 </div>
                 <div class="form-group">
-                    <label>Description</label>
-                    <textarea class="form-control"></textarea>
+                    <label>Contact PDV</label>
+                    <input type="text" class="form-control" >
                 </div>
-                <button type="submit" class="btn btn-primary">Create</button>
+                <div class="form-group">
+                    <label>PLV présent</label>
+                    <input type="text" class="form-control" >
+                </div>
+                <div class="form-group">
+                    <label>Représentant FC</label>
+                    <input type="text" class="form-control" >
+                </div>
+               
+                <button type="submit" class="btn btn-primary">Créer</button>
             </form>
           </div>
         </div>

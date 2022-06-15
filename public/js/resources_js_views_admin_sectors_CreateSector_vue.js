@@ -59,25 +59,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
       user: 0,
-      users: [],
-      country: 0,
-      countries: [],
-      state: 0,
-      states: []
+      users: []
     };
   },
   methods: {
     getSupervisor: function getSupervisor() {
-      axios.get('/get_countries').then(function (response) {
-        this.countries = response.data;
+      axios.get('/get_users').then(function (response) {
+        this.users = response.data;
       }.bind(this));
     }
   },
@@ -210,32 +202,27 @@ var render = function() {
                     ],
                     staticClass: "form-control",
                     on: {
-                      change: [
-                        function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.user = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        },
-                        function($event) {
-                          return _vm.getSupervisor()
-                        }
-                      ]
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.user = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
                     }
                   },
                   [
                     _c("option", { attrs: { value: "0" } }, [
-                      _vm._v("Select Country")
+                      _vm._v("Select user")
                     ]),
                     _vm._v(" "),
-                    _vm._l(_vm.countries, function(data) {
+                    _vm._l(_vm.users, function(data) {
                       return _c("option", { domProps: { value: data.id } }, [
                         _vm._v(_vm._s(data.name))
                       ])

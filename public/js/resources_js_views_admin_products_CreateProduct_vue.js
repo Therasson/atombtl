@@ -56,33 +56,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   data: function data() {
     return {
-      user: 0,
-      users: [],
-      country: 0,
-      countries: [],
-      state: 0,
-      states: []
+      form: {
+        product: 0,
+        name: '',
+        image: '',
+        description: '',
+        etat: ''
+      }
     };
   },
   methods: {
-    getSupervisor: function getSupervisor() {
-      axios.get('/get_countries').then(function (response) {
-        this.countries = response.data;
-      }.bind(this));
+    /*getSupervisor: function(){
+        axios.get('/get_countries')
+            .then(function (response) {
+                this.countries = response.data;
+            }.bind(this));
+    },*/
+    setImage: function setImage(event) {
+      this.form.image = event.target.files[0];
+    },
+    storeProduct: function storeProduct() {
+      var formData = new FormData();
+      formData.append('name', this.form.name);
+      formData.append('image', this.form.image);
+      formData.append('description', this.form.description);
+      axios.post('/products', formData, {
+        'Content-Type': 'multipart/form-data'
+      }).then(function (response) {
+        console.log(response.data);
+      });
     }
-  },
-  created: function created() {
-    this.getSupervisor();
   }
 });
 
@@ -178,13 +184,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("h1", { staticClass: "h3 mb-1 text-gray-800" }, [
-      _vm._v("Créer une zone")
-    ]),
-    _vm._v(" "),
-    _c("p", { staticClass: "mb-4" }, [
-      _vm._v(
-        "\n    Bootstrap's default utility classes can be found on the official page.\n    The custom utilities below were created to extend this theme past the\n    default utility classes built into Bootstrap's framework.\n  "
-      )
+      _vm._v("Ajouter un produit")
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
@@ -193,68 +193,90 @@ var render = function() {
           _vm._m(0),
           _vm._v(" "),
           _c("div", { staticClass: "card-body" }, [
-            _c("form", [
-              _c("div", { staticClass: "form-group" }, [
-                _c("label", [_vm._v("Nom du responsable de zone")]),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
+            _c(
+              "form",
+              {
+                on: {
+                  submit: function($event) {
+                    $event.preventDefault()
+                    $event.stopPropagation()
+                    return _vm.storeProduct.apply(null, arguments)
+                  }
+                }
+              },
+              [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Nom du produit")]),
+                  _vm._v(" "),
+                  _c("input", {
                     directives: [
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.user,
-                        expression: "user"
+                        value: _vm.form.name,
+                        expression: "form.name"
                       }
                     ],
                     staticClass: "form-control",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.form.name },
                     on: {
-                      change: [
-                        function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.user = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        },
-                        function($event) {
-                          return _vm.getSupervisor()
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
                         }
-                      ]
+                        _vm.$set(_vm.form, "name", $event.target.value)
+                      }
                     }
-                  },
-                  [
-                    _c("option", { attrs: { value: "0" } }, [
-                      _vm._v("Select Country")
-                    ]),
-                    _vm._v(" "),
-                    _vm._l(_vm.countries, function(data) {
-                      return _c("option", { domProps: { value: data.id } }, [
-                        _vm._v(_vm._s(data.name))
-                      ])
-                    })
-                  ],
-                  2
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Image")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    staticClass: "form-control",
+                    attrs: { type: "file" },
+                    on: {
+                      change: function($event) {
+                        return _vm.setImage($event)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("Description")]),
+                  _vm._v(" "),
+                  _c("textarea", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.form.description,
+                        expression: "form.description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    domProps: { value: _vm.form.description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.form, "description", $event.target.value)
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "button",
+                  { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+                  [_vm._v("Create")]
                 )
-              ]),
-              _vm._v(" "),
-              _vm._m(1),
-              _vm._v(" "),
-              _vm._m(2),
-              _vm._v(" "),
-              _c(
-                "button",
-                { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-                [_vm._v("Create")]
-              )
-            ])
+              ]
+            )
           ])
         ])
       ])
@@ -268,28 +290,8 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header py-3" }, [
       _c("h6", { staticClass: "m-0 font-weight-bold text-primary" }, [
-        _vm._v("\n            Ajouter une nouvelle zone\n          ")
+        _vm._v("\n            Ajouter un produit\n          ")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Nom de la zone")]),
-      _vm._v(" "),
-      _c("input", { staticClass: "form-control", attrs: { type: "text" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c("label", [_vm._v("Description")]),
-      _vm._v(" "),
-      _c("textarea", { staticClass: "form-control" })
     ])
   }
 ]
