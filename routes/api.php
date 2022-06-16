@@ -6,6 +6,7 @@ use App\Http\Controllers\Api;
 
 use App\Http\Controllers\Api\CoreController;
 use App\Http\Controllers\Api\V1\ProductController;
+use App\Http\Controllers\Api\V1\PosController;
 use App\Http\Controllers\Api\V1\AreaController;
 
 /*
@@ -40,9 +41,11 @@ Route::group(['middleware' => ['auth:api']], function () {
 
 
 Route::get('/get_users', [CoreController::class, 'getSupervisor']);
+Route::get('/get_sectors', [CoreController::class, 'getSectors']);
 
 Route::resource('areas', AreaController::class);
 Route::resource('sectors', SectorController::class);
 
 
 Route::resource('products', ProductController::class);
+Route::resource('pos', PosController::class);

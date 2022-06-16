@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Pos;
 
 class PosController extends Controller
 {
@@ -14,7 +15,17 @@ class PosController extends Controller
      */
     public function index()
     {
-        //
+        /*return response([
+            'areas' => Area::orderBy('created_at', 'desc')->with('user', function($user) { return $user->get(); })
+                ->get()
+        ], 200);
+
+        return response([
+            'pos' => Pos::orderBy('created_at', 'desc')->get()
+        ], 200);*/
+
+        $pos = Pos::all()->toArray();
+        return array_reverse($pos);
     }
 
     /**
@@ -35,7 +46,40 @@ class PosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        var_dump($rquest->all());
+        die();
+        
+        //validate fields
+        $attrs = $request->validate([
+            'name' => 'required|string',
+            'secteur' => 'required',
+        ]);
+
+        //Area registration
+        /* if (auth()->user()->id)
+        {
+            return response([
+                'message' => 'Permission denied to create Area.'
+            ]);
+        }
+        else
+        {
+            $area = Area::create([
+                'name' =>$attrs['name'],
+                'user_id' => auth()->user()->id,
+                'etat' => 1
+            ]);
+        }*/
+        $area = Area::create([
+            'name' =>$attrs['zone'],
+            'user_id' => $request->user,
+            'description' => $request->description,
+            'etat' => 1
+        ]);
+
+        return response([
+            'area' => $area,
+        ], 200);
     }
 
     /**

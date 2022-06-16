@@ -10,7 +10,7 @@
             <div class="col-lg-7">
               <div class="p-5">
                 <div class="text-center">
-                  <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
+                  <h1 class="h4 text-gray-900 mb-4">Créer un compte!</h1>
                 </div>
                 <form class="user" @submit.prevent="register">
                   <div class="form-group row">
@@ -70,12 +70,12 @@
                 <hr />
                 <div class="text-center">
                   <router-link class="small" to="/forgot-password"
-                    >Forgot Password?</router-link
+                    >Mot de passe oublié?</router-link
                   >
                 </div>
                 <div class="text-center">
                   <router-link class="small" to="/login"
-                    >Already have an account? Login!</router-link
+                    >Vous avez déjà un compte? Connexion!</router-link
                   >
                 </div>
               </div>
@@ -127,7 +127,7 @@ export default {
           this.$router.push(`/verify/user/${response.data.id}`);
         } else {
           let message =
-            "Your account has been created successfully. Please Log in.";
+            "Votre compte a été créé avec succès. Veuillez vous connecter.";
           let toast = Vue.toasted.show(message, {
             theme: "toasted-primary",
             position: "top-right",

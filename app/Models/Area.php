@@ -16,4 +16,20 @@ class Area extends Model
         'etat'
     ];
 
+     /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sectors()
+    {
+        return $this->hasMany(Sector::class);
+    }
+
 }

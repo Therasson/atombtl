@@ -219,7 +219,7 @@ let router = new Router({
         },
         {
             path: "/admin/products/edit/:id",
-            name: "EditProductss",
+            name: "EditProducts",
             component: () => import("./views/admin/products/EditProduct.vue"),
             meta: {
                 requiresAuth: true,

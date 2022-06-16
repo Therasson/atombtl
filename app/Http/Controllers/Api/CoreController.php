@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Sector;
 
 class CoreController extends Controller
 {
@@ -21,6 +22,14 @@ class CoreController extends Controller
         return response()->json($supervisors);*/
 
         $data = User::all();
+        return response()->json($data);
+    }
+
+    /**
+     * Rtourne tous les secteurs
+     */
+    public function getSectors(){
+        $data = Sector::all();
         return response()->json($data);
     }
 }

@@ -194,7 +194,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (response.data.must_verify_email) {
                   _this.$router.push("/verify/user/".concat(response.data.id));
                 } else {
-                  message = "Your account has been created successfully. Please Log in.";
+                  message = "Votre compte a été créé avec succès. Veuillez vous connecter.";
                   toast = Vue.toasted.show(message, {
                     theme: "toasted-primary",
                     position: "top-right",
@@ -659,7 +659,7 @@ var render = function() {
                           staticClass: "small",
                           attrs: { to: "/forgot-password" }
                         },
-                        [_vm._v("Forgot Password?")]
+                        [_vm._v("Mot de passe oublié?")]
                       )
                     ],
                     1
@@ -672,7 +672,7 @@ var render = function() {
                       _c(
                         "router-link",
                         { staticClass: "small", attrs: { to: "/login" } },
-                        [_vm._v("Already have an account? Login!")]
+                        [_vm._v("Vous avez déjà un compte? Connexion!")]
                       )
                     ],
                     1
@@ -694,7 +694,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("h1", { staticClass: "h4 text-gray-900 mb-4" }, [
-        _vm._v("Create an Account!")
+        _vm._v("Créer un compte!")
       ])
     ])
   }

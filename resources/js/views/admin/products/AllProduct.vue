@@ -37,7 +37,7 @@
                                 <td>Edinburgh</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
+                                        <router-link :to="{name: 'EditProducts', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
                                         <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button>
                                     </div>
                                 </td>
@@ -62,7 +62,7 @@ export default {
         }
     },
      created() {
-        axios.get('http://localhost:8000/api/admin/products/')
+        axios.get('/products/')
             .then(response => {
                 this.products = response.data;
                 console.log(response.data);
@@ -70,8 +70,7 @@ export default {
     },
     methods: {
         deleteProduct(id) { 
-            this.axios
-                .delete(`http://localhost:8000/api/admin/products/${id}`)
+            axios.delete(`http://localhost:8000/api/admin/products/${id}`)
                 .then(response => {
                     let i = this.products.map(data => data.id).indexOf(id);
                     this.products.splice(i, 1)

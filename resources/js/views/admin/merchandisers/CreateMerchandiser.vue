@@ -1,11 +1,6 @@
 <template>
   <div>
-    <h1 class="h3 mb-1 text-gray-800">Créer une zone</h1>
-    <p class="mb-4">
-      Bootstrap's default utility classes can be found on the official page.
-      The custom utilities below were created to extend this theme past the
-      default utility classes built into Bootstrap's framework.
-    </p>
+    <h1 class="h3 mb-1 text-gray-800">Merchandiser</h1>
 
     <!-- Content Row -->
     <div class="row">
@@ -14,31 +9,39 @@
         <div class="card mb-4">
           <div class="card-header py-3">
             <h6 class="m-0 font-weight-bold text-primary">
-              Ajouter une nouvelle zone
+              Ajouter un merchandiser
             </h6>
           </div>
           <div class="card-body">
             <form>
+               
                 <div class="form-group">
-                    <label>Nom du responsable de zone</label>
-                    <!-- <select class="form-control" v-model='country' @change='getSupervisor()'>
-                      <option value='0' >Selectionnez le chez de zone</option>
-                      <option v-for='supervisors in supervisor' :value='data.id'>{{ data.name }}</option>
-                    </select> -->
-                   <select class='form-control' v-model='user' @change='getSupervisor()'>
-                                <option value='0' >Select Country</option>
-                                <option v-for='data in countries' :value='data.id'>{{ data.name }}</option>
-                            </select>
-                </div>
-                <div class="form-group">
-                    <label>Nom de la zone</label>
+                    <label>Nom</label>
                     <input type="text" class="form-control" >
                 </div>
+
                 <div class="form-group">
-                    <label>Description</label>
-                    <textarea class="form-control"></textarea>
+                    <label>Prénoms</label>
+                    <input type="text" class="form-control" >
                 </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label>Mot de passe</label>
+                    <input type="text" class="form-control" >
+                </div>
+
+                <div class="form-group">
+                    <label>Confirmez le mot de passe</label>
+                    <input type="text" class="form-control" >
+                </div>
+                
                 <button type="submit" class="btn btn-primary">Create</button>
+                
             </form>
           </div>
         </div>

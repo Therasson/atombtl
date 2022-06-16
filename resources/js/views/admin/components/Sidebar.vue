@@ -11,7 +11,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Atom BTL</div>
       </router-link>
 
       <!-- Divider -->
@@ -21,7 +21,7 @@
       <li class="nav-item active">
         <router-link class="nav-link" to="/admin">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></router-link
+          <span>Tableau de bord</span></router-link
         >
       </li>
 

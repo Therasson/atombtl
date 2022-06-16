@@ -70,6 +70,33 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  data: function data() {
+    return {
+      areas: []
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    axios.get('/areas').then(function (response) {
+      _this.areas = response.data;
+      console.log(response.data);
+    });
+  },
+
+  /*
+  methods: {
+      deleteArea(id) { 
+          axios.delete(`areas/${id}`)
+              .then(response => {
+                  let i = this.areas.map(data => data.id).indexOf(id);
+                  this.areas.splice(i, 1)
+              });
+      },
+      forceUpdate(){
+          this.$forceUpdate();
+      }
+  },*/
   name: 'Tables',
   mounted: function mounted() {
     $('#dataTable').DataTable();
@@ -16112,12 +16139,8 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("h1", { staticClass: "h3 mb-2 text-gray-800" }, [_vm._v("Tables")]),
-    _vm._v(" "),
-    _c("p", { staticClass: "mb-4" }, [
-      _vm._v(
-        "DataTables is a third party plugin that is used to generate the demo table below.\n        For more information about DataTables, please visit the official DataTables."
-      )
+    _c("h1", { staticClass: "h3 mb-2 text-gray-800" }, [
+      _vm._v("Liste des zones")
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "card shadow mb-4" }, [
@@ -16129,7 +16152,7 @@ var render = function() {
             "table",
             {
               staticClass: "table table-bordered",
-              attrs: { id: "dataTable", width: "100%", cellspacing: "0" }
+              attrs: { id: "dataable", width: "100%", cellspacing: "0" }
             },
             [
               _vm._m(1),
@@ -16139,8 +16162,8 @@ var render = function() {
               _c(
                 "tbody",
                 _vm._l(_vm.areas, function(area) {
-                  return _c("tr", { key: _vm.product.id }, [
-                    _c("td", [_vm._v(_vm._s(_vm.product.name))]),
+                  return _c("tr", { key: area.id }, [
+                    _c("td", [_vm._v(_vm._s(area.name))]),
                     _vm._v(" "),
                     _c("td", [_vm._v("System Architect")]),
                     _vm._v(" "),
@@ -16157,8 +16180,8 @@ var render = function() {
                               staticClass: "btn btn-success",
                               attrs: {
                                 to: {
-                                  name: "edit",
-                                  params: { id: _vm.product.id }
+                                  name: "EditAreas",
+                                  params: { id: area.id }
                                 }
                               }
                             },
@@ -16171,7 +16194,7 @@ var render = function() {
                               staticClass: "btn btn-danger",
                               on: {
                                 click: function($event) {
-                                  return _vm.deleteProduct(_vm.product.id)
+                                  return _vm.deleteArea(area.id)
                                 }
                               }
                             },
@@ -16199,7 +16222,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header py-3" }, [
       _c("h6", { staticClass: "m-0 font-weight-bold text-primary" }, [
-        _vm._v("DataTables Example")
+        _vm._v("Liste de zones")
       ])
     ])
   },

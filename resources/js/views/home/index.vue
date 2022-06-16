@@ -4,14 +4,14 @@
     <div class="masthead">
       <div class="text-center text-white">
         <h1 class="py-5 home-title">
-          Welcome to Laravel 8 & Vue.js Admin Dashboard
+          Bienvenue sur ATOM BTL Marketing
         </h1>
       </div>
     </div>
     <div class="container">
       <div class="text-center py-5 min-vh-50">
         <router-link to="/admin" class="btn btn-primary">
-          Go to dashboard <i class="fas fa-chevron-right"></i
+          Aller au tableau de bord <i class="fas fa-chevron-right"></i
         ></router-link>
       </div>
     </div>

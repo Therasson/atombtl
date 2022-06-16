@@ -1,18 +1,18 @@
 <template>
     <div>
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the official DataTables.</p>
+        <h1 class="h3 mb-2 text-gray-800">Liste des zones</h1>
+        <!-- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
+            For more information about DataTables, please visit the official DataTables.</p> -->
 
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Liste de zones</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
                                 <th>Zone</th>
@@ -31,14 +31,14 @@
                         </tfoot>
                         <tbody>
 
-                             <tr v-for="area in areas" :key="product.id">
-                                <td>{{ product.name }}</td>
+                          <tr v-for="area in areas" :key="area.id">
+                                <td>{{ area.name }}</td>
                                 <td>System Architect</td>
                                 <td>Edinburgh</td>
                                 <td>
                                     <div class="btn-group" role="group">
-                                        <router-link :to="{name: 'edit', params: { id: product.id }}" class="btn btn-success">Edit</router-link>
-                                        <button class="btn btn-danger" @click="deleteProduct(product.id)">Delete</button>
+                                        <router-link :to="{name: 'EditAreas', params: { id: area.id }}" class="btn btn-success">Edit</router-link>
+                                        <button class="btn btn-danger" @click="deleteArea(area.id)">Delete</button>
                                     </div>
                                 </td>
                             </tr>
@@ -56,6 +56,34 @@ import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 
 export default {
+
+    data() {
+        return {
+            areas: []
+        }
+    },
+     created() {
+        axios.get('/areas')
+            .then(response => {
+                this.areas = response.data;
+                console.log(response.data);
+            });
+    },
+    /*
+    methods: {
+        deleteArea(id) { 
+            axios.delete(`areas/${id}`)
+                .then(response => {
+                    let i = this.areas.map(data => data.id).indexOf(id);
+                    this.areas.splice(i, 1)
+                });
+        },
+        forceUpdate(){
+            this.$forceUpdate();
+        }
+    },*/
+
+
     name: 'Tables',
     mounted(){
         $('#dataTable').DataTable();

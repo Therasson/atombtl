@@ -146,10 +146,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
   },
   created: function created() {
     if (this.$route.query.verification_status === "success") {
-      this.verificationMessage = "Your account has been verified. Please log in.";
+      this.verificationMessage = "Votre compte a été vérifié. Veuillez vous connecter.";
       this.verificationAlertClasses['alert-success'] = true;
     } else if (this.$route.query.verification_status === "error") {
-      this.verificationMessage = "Your account could not be verified.";
+      this.verificationMessage = "Votre compte n'a pas pu être vérifié.";
       this.verificationAlertClasses['alert-danger'] = true;
     }
   },
@@ -389,7 +389,7 @@ var render = function() {
                                   type: "email",
                                   id: "exampleInputEmail",
                                   "aria-describedby": "emailHelp",
-                                  placeholder: "Enter Email Address..."
+                                  placeholder: "Entrer votre adresse email..."
                                 },
                                 domProps: { value: _vm.email },
                                 on: {
@@ -417,7 +417,7 @@ var render = function() {
                                 attrs: {
                                   type: "password",
                                   id: "exampleInputPassword",
-                                  placeholder: "Password"
+                                  placeholder: "Mot de passe"
                                 },
                                 domProps: { value: _vm.password },
                                 on: {
@@ -442,7 +442,7 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                      Login\n                    "
+                                  "\n                      Connexion\n                    "
                                 )
                               ]
                             )
@@ -461,7 +461,7 @@ var render = function() {
                                 staticClass: "small",
                                 attrs: { to: "/forgot-password" }
                               },
-                              [_vm._v("Forgot Password?")]
+                              [_vm._v("Mot de passe oublié?")]
                             )
                           ],
                           1
@@ -477,7 +477,7 @@ var render = function() {
                                 staticClass: "small",
                                 attrs: { to: "/register" }
                               },
-                              [_vm._v("Create an Account!")]
+                              [_vm._v("Créer un compte!")]
                             )
                           ],
                           1
@@ -519,7 +519,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-center" }, [
       _c("h1", { staticClass: "h4 text-gray-900 mb-4" }, [
-        _vm._v("Welcome Back!")
+        _vm._v("Content de te revoir!")
       ])
     ])
   },
@@ -540,7 +540,7 @@ var staticRenderFns = [
             staticClass: "custom-control-label",
             attrs: { for: "customCheck" }
           },
-          [_vm._v("Remember Me")]
+          [_vm._v("Se souvenir de moi")]
         )
       ])
     ])

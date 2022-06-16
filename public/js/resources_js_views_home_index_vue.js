@@ -666,7 +666,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("footer", { staticClass: "footer footer-dark bg-dark" }, [
       _c("div", { staticClass: "container text-center py-5" }, [
-        _c("p", [_vm._v("\n      Laravel and Vue Admin Dashboard @\n    ")])
+        _c("p", [_vm._v("\n      Atom BTL Marketing @\n    ")])
       ])
     ])
   }
@@ -709,7 +709,7 @@ var render = function() {
               "router-link",
               { staticClass: "btn btn-primary", attrs: { to: "/admin" } },
               [
-                _vm._v("\n        Go to dashboard "),
+                _vm._v("\n        Aller au tableau de bord "),
                 _c("i", { staticClass: "fas fa-chevron-right" })
               ]
             )
@@ -731,9 +731,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "masthead" }, [
       _c("div", { staticClass: "text-center text-white" }, [
         _c("h1", { staticClass: "py-5 home-title" }, [
-          _vm._v(
-            "\n        Welcome to Laravel 8 & Vue.js Admin Dashboard\n      "
-          )
+          _vm._v("\n        Bienvenue sur ATOM BTL Marketing\n      ")
         ])
       ])
     ])

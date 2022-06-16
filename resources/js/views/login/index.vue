@@ -36,7 +36,7 @@
                 <div class="col-lg-6">
                   <div class="p-5">
                     <div class="text-center">
-                      <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
+                      <h1 class="h4 text-gray-900 mb-4">Content de te revoir!</h1>
                     </div>
                     <form class="user" @submit.prevent="login">
                       <div class="form-group">
@@ -45,7 +45,7 @@
                           class="form-control form-control-user"
                           id="exampleInputEmail"
                           aria-describedby="emailHelp"
-                          placeholder="Enter Email Address..."
+                          placeholder="Entrer votre adresse email..."
                           v-model="email"
                         />
                       </div>
@@ -54,7 +54,7 @@
                           type="password"
                           class="form-control form-control-user"
                           id="exampleInputPassword"
-                          placeholder="Password"
+                          placeholder="Mot de passe"
                           v-model="password"
                         />
                       </div>
@@ -66,7 +66,7 @@
                             id="customCheck"
                           />
                           <label class="custom-control-label" for="customCheck"
-                            >Remember Me</label
+                            >Se souvenir de moi</label
                           >
                         </div>
                       </div>
@@ -74,18 +74,18 @@
                         type="submit"
                         class="btn btn-primary btn-user btn-block"
                       >
-                        Login
+                        Connexion
                       </button>
                     </form>
                     <hr />
                     <div class="text-center">
                       <router-link class="small" to="/forgot-password"
-                        >Forgot Password?</router-link
+                        >Mot de passe oublié?</router-link
                       >
                     </div>
                     <div class="text-center">
                       <router-link class="small" to="/register"
-                        >Create an Account!</router-link
+                        >Créer un compte!</router-link
                       >
                     </div>
                   </div>
@@ -123,10 +123,10 @@ export default {
   },
   created: function () {
     if (this.$route.query.verification_status === "success") {
-      this.verificationMessage = "Your account has been verified. Please log in.";
+      this.verificationMessage = "Votre compte a été vérifié. Veuillez vous connecter.";
       this.verificationAlertClasses['alert-success'] = true;
     } else if (this.$route.query.verification_status === "error") {
-      this.verificationMessage = "Your account could not be verified.";
+      this.verificationMessage = "Votre compte n'a pas pu être vérifié.";
       this.verificationAlertClasses['alert-danger'] = true;
     }
   },

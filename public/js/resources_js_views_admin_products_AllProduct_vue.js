@@ -78,7 +78,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('http://localhost:8000/api/admin/products/').then(function (response) {
+    axios.get('/products/').then(function (response) {
       _this.products = response.data;
       console.log(response.data);
     });
@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
     deleteProduct: function deleteProduct(id) {
       var _this2 = this;
 
-      this.axios["delete"]("http://localhost:8000/api/admin/products/".concat(id)).then(function (response) {
+      axios["delete"]("http://localhost:8000/api/admin/products/".concat(id)).then(function (response) {
         var i = _this2.products.map(function (data) {
           return data.id;
         }).indexOf(id);
@@ -16185,7 +16185,10 @@ var render = function() {
                             {
                               staticClass: "btn btn-success",
                               attrs: {
-                                to: { name: "edit", params: { id: product.id } }
+                                to: {
+                                  name: "EditProducts",
+                                  params: { id: product.id }
+                                }
                               }
                             },
                             [_vm._v("Edit")]

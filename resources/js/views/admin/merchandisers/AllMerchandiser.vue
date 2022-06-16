@@ -1,46 +1,44 @@
 <template>
     <div>
         <!-- Page Heading -->
-        <h1 class="h3 mb-2 text-gray-800">Tables</h1>
-        <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-            For more information about DataTables, please visit the official DataTables.</p>
-
+        <h1 class="h3 mb-2 text-gray-800">Merchandiser</h1>
+        
         <!-- DataTales Example -->
         <div class="card shadow mb-4">
             <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+                <h6 class="m-0 font-weight-bold text-primary">Liste des Merchandiser</h6>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <table class="table table-bordered" id="dataable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
-                                <th>Zone</th>
-                                <th>Responsable de la zone</th>
-                                <th>Nombre de Merc.</th>
+                                <th>Nom</th>
+                                <th>Prenoms</th>
+                                <th>Nom du responsable.</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
-                                <th>Zone</th>
-                                <th>Responsable de la zone</th>
-                                <th>Nombre de Merc.</th>
+                                 <th>Nom</th>
+                                <th>Prenoms</th>
+                                <th>Nom du responsable.</th>
                                 <th>Actions</th>
                             </tr>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <td>Tiger Nixon</td>
-                                <td>System Architect</td>
+                           
+                            <tr v-for="mechandiser in mechandisers" :key="mechandiser.id">
+                                <td>{{ mechandiser.first_name }}</td>
+                                <td>{{ mechandiser.last_name }}</td>
                                 <td>Edinburgh</td>
-                                <td>61</td>
-                            </tr>
-                            <tr>
-                                <td>Garrett Winters</td>
-                                <td>Accountant</td>
-                                <td>Tokyo</td>
-                                <td>63</td>
+                                <td>
+                                    <div class="btn-group" role="group">
+                                        <router-link :to="{name: 'EditMerchandiser', params: { id: merchandiser.id }}" class="btn btn-success">Edit</router-link>
+                                        <button class="btn btn-danger" @click="deleteArea(merchandiser.id)">Delete</button>
+                                    </div>
+                                </td>
                             </tr>
                             
                         </tbody>
@@ -56,6 +54,19 @@ import "datatables.net-dt/js/dataTables.dataTables"
 import "datatables.net-dt/css/jquery.dataTables.min.css"
 
 export default {
+    data() {
+        return {
+            merchandiser: []
+        }
+    },
+     created() {
+        axios.get('/merchandisers')
+            .then(response => {
+                this.merchandisers = response.data;
+                console.log(response.data);
+            });
+    },
+
     name: 'Tables',
     mounted(){
         $('#dataTable').DataTable();

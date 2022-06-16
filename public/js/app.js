@@ -3138,7 +3138,7 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_3__.default({
     }
   }, {
     path: "/admin/products/edit/:id",
-    name: "EditProductss",
+    name: "EditProducts",
     component: function component() {
       return __webpack_require__.e(/*! import() */ "resources_js_views_admin_products_EditProduct_vue").then(__webpack_require__.bind(__webpack_require__, /*! ./views/admin/products/EditProduct.vue */ "./resources/js/views/admin/products/EditProduct.vue"));
     },
@@ -77570,7 +77570,7 @@ var render = function() {
               _c(
                 "router-link",
                 { staticClass: "navbar-brand", attrs: { to: "/" } },
-                [_vm._v("Home")]
+                [_vm._v("Accueil")]
               ),
               _vm._v(" "),
               !_vm.user
@@ -77583,7 +77583,7 @@ var render = function() {
                           "router-link",
                           { staticClass: "nav-link", attrs: { to: "/login" } },
                           [
-                            _vm._v("Login "),
+                            _vm._v("Connexion "),
                             _c("span", { staticClass: "sr-only" }, [
                               _vm._v("(current)")
                             ])
@@ -77603,7 +77603,7 @@ var render = function() {
                             staticClass: "nav-link",
                             attrs: { to: "/register" }
                           },
-                          [_vm._v("Sign Up")]
+                          [_vm._v("Inscription")]
                         )
                       ],
                       1
@@ -77704,8 +77704,7 @@ var render = function() {
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "sidebar-brand-text mx-3" }, [
-            _vm._v("SB Admin "),
-            _c("sup", [_vm._v("2")])
+            _vm._v("Atom BTL")
           ])
         ]
       ),
@@ -77722,7 +77721,7 @@ var render = function() {
             [
               _c("i", { staticClass: "fas fa-fw fa-tachometer-alt" }),
               _vm._v(" "),
-              _c("span", [_vm._v("Dashboard")])
+              _c("span", [_vm._v("Tableau de bord")])
             ]
           )
         ],
@@ -78863,7 +78862,7 @@ var staticRenderFns = [
     return _c("footer", { staticClass: "sticky-footer bg-white" }, [
       _c("div", { staticClass: "container my-auto" }, [
         _c("div", { staticClass: "copyright text-center my-auto" }, [
-          _c("span", [_vm._v("Copyright © Your Website 2021")])
+          _c("span", [_vm._v("Copyright © ATOM BTL Marketing 2022")])
         ])
       ])
     ])

@@ -15,7 +15,9 @@ class AreaController extends Controller
      */
     public function index()
     {
-        //
+        $areas = Area::all()->toArray();
+        return array_reverse($areas);
+
     }
 
     /**
